@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: menuserver-service
+spec:
+  selector:
+    app: menuserver
+  ports:
+  {{- toYaml .Values.ports | nindent 2 }}
+  type: LoadBalancer

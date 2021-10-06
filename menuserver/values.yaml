@@ -1,0 +1,5 @@
+replicaCount: 2
+servicePort: 8080
+ports:
+- port: 8888
+  targetPort: 8080

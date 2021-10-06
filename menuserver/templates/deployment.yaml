@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: menuserver
+  name: menuserver
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: menuserver
+  template:
+    metadata:
+      labels:
+        app: menuserver
+    spec:
+      containers:
+      - image: rabatiproject-menuserver:0.0.1
+        name: menuserver
