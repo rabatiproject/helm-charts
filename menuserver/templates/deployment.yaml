@@ -3,40 +3,45 @@ kind: Deployment
 metadata:
   labels:
     app: menuserver
-  name: menuserver-backend-deployment
+  name: menuserver-be-deployment
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: menuserver-backend
+      app: menuserver-be
   template:
     metadata:
       labels:
-        app: menuserver-backend
+        app: menuserver-be
     spec:
       containers:
-      - image: rabatiproject-menuserver:0.0.1
-        name: menuserver-backend
+      - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.1
+        name: menuserver-be
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
     labels:
       app: menuserver
-    name: menuserver-frontend-deployment
+    name: menuserver-fe-deployment
+    namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.uiReplicaCount }}
+  replicas: {{ .Values.feReplicaCount }}
   selector:
     matchLabels:
-      app: menuserver-ui
+      app: menuserver-fe
   template:
     metadata:
         labels:
-          app:  menuserver-ui
+          app:  menuserver-fe
     spec:
       containers:
-      - image: rabatiproject-menuserver:0.0.1
-        name: menuserver-ui
+      - image: registry.digitalocean.com/rabati-registry/menuserver-fe:0.0.1
+        name: menuserver-fe
         env:
         - name: API_URL
-          value: http://{{ .Values.backendServiceName }}.default.svc.cluster.local
+          value: http://$MENUSERVER_BE_SERVICE_SERVICE_HOST:$MENUSERVER_BE_SERVICE_SERVICE_PORT
+          # value: http://{{ .Values.beServiceName }}.default.svc.cluster.local:8888
+
+

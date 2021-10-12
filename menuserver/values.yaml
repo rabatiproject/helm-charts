@@ -1,10 +1,11 @@
 replicaCount: 2
-uiReplicaCount: 1
+feReplicaCount: 1
 servicePort: 8080
-backendServiceName: menuserver-backend-service
-backendPorts:
-- port: 8888
-  targetPort: 8080
-frontendPorts:
-- port: 8888
-  targetPort: 3000
+beServiceName: menuserver-be-service
+namespace: default
+bePorts:
+  - port: 8888
+    targetPort: 8080
+fePorts:
+  - port: 8888
+    targetPort: 3000
