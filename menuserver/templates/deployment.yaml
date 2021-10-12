@@ -3,17 +3,40 @@ kind: Deployment
 metadata:
   labels:
     app: menuserver
-  name: menuserver
+  name: menuserver-backend-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: menuserver
+      app: menuserver-backend
   template:
     metadata:
       labels:
-        app: menuserver
+        app: menuserver-backend
     spec:
       containers:
       - image: rabatiproject-menuserver:0.0.1
-        name: menuserver
+        name: menuserver-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+      app: menuserver
+    name: menuserver-frontend-deployment
+spec:
+  replicas: {{ .Values.uiReplicaCount }}
+  selector:
+    matchLabels:
+      app: menuserver-ui
+  template:
+    metadata:
+        labels:
+          app:  menuserver-ui
+    spec:
+      containers:
+      - image: rabatiproject-menuserver:0.0.1
+        name: menuserver-ui
+        env:
+        - name: API_URL
+          value: http://{{ .Values.backendServiceName }}.default.svc.cluster.local

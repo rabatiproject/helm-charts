@@ -1,10 +1,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: menuserver-service
+  name: {{ .Values.backendServiceName }}
 spec:
   selector:
-    app: menuserver
+    app: menuserver-backend
   ports:
-  {{- toYaml .Values.ports | nindent 2 }}
+  {{- toYaml .Values.backendPorts | nindent 2 }}
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: menuserver-frontend-service
+spec:
+  selector:
+    app: menuserver-ui
+  ports:
+  {{- toYaml .Values.frontendPorts | nindent 2 }}
   type: LoadBalancer
