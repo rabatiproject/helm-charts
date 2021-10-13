@@ -16,7 +16,7 @@ spec:
         app: menuserver-be
     spec:
       containers:
-      - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.3
+      - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.1
         name: menuserver-be
         imagePullPolicy: Always
         env:
