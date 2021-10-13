@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: menuserver
-  name: menuserver-be-deployment
+  name: menuserver-be-dep
   namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -18,6 +18,7 @@ spec:
       containers:
       - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.3
         name: menuserver-be
+        imagePullPolicy: Always
         env:
         - name: MS_DATABASE_IP
           value: {{ .Release.Name }}-postgresql.default.svc.cluster.local
@@ -44,7 +45,7 @@ kind: Deployment
 metadata:
     labels:
       app: menuserver
-    name: menuserver-fe-deployment
+    name: menuserver-fe-dep
     namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.feReplicaCount }}
@@ -57,10 +58,10 @@ spec:
           app:  menuserver-fe
     spec:
       containers:
-      - image: registry.digitalocean.com/rabati-registry/menuserver-fe:0.0.4
+      - image: registry.digitalocean.com/rabati-registry/menuserver-fe:0.0.1
         name: menuserver-fe
+        imagePullPolicy: Always
         env:
         - name: API_URL
           value: http://178.128.141.177:8888
           #value: http://{{ .Values.beServiceName }}.default.svc.cluster.local:8888
-          
