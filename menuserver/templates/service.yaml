@@ -8,6 +8,7 @@ spec:
     app: menuserver-be
   ports:
   {{- toYaml .Values.bePorts | nindent 2 }}
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service

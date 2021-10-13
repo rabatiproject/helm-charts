@@ -9,3 +9,7 @@ bePorts:
 fePorts:
   - port: 8888
     targetPort: 3000
+postgresql:
+  postgresqlUsername: postgres
+  postgresqlDatabase: postgres
+  #postgresqlPassword: "123456"

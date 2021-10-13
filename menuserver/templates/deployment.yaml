@@ -16,8 +16,28 @@ spec:
         app: menuserver-be
     spec:
       containers:
-      - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.1
+      - image: registry.digitalocean.com/rabati-registry/menuserver-be:0.0.3
         name: menuserver-be
+        env:
+        - name: MS_DATABASE_IP
+          value: {{ .Release.Name }}-postgresql.default.svc.cluster.local
+        - name: MS_DATABASE_PORT
+          value: "5432"
+        - name: MS_DATABASE_USER
+          value: "postgres"
+        - name: MS_DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgresql
+              key: postgresql-password
+        - name: MS_DATABASE_NAME
+          value: "postgres"
+        - name: MS_DATABASE_IS_TEMPORARY
+          value: "false"
+        # args:
+        #   - /bin/sh
+        #   - -c
+        #   - sleep 6464646
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -37,11 +57,10 @@ spec:
           app:  menuserver-fe
     spec:
       containers:
-      - image: registry.digitalocean.com/rabati-registry/menuserver-fe:0.0.1
+      - image: registry.digitalocean.com/rabati-registry/menuserver-fe:0.0.4
         name: menuserver-fe
         env:
         - name: API_URL
-          value: http://$MENUSERVER_BE_SERVICE_SERVICE_HOST:$MENUSERVER_BE_SERVICE_SERVICE_PORT
-          # value: http://{{ .Values.beServiceName }}.default.svc.cluster.local:8888
-
-
+          value: http://178.128.141.177:8888
+          #value: http://{{ .Values.beServiceName }}.default.svc.cluster.local:8888
+          
