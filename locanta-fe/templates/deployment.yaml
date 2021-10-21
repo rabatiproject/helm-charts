@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.deployment.name }}
-  namespace: {{ .Values.namespace }}
-  labels:
-     app: locanta
-     type: locanta-dep
+    name: {{ .Values.deployment.name }}
+    namespace: {{ .Values.namespace }}
+    labels:
+       app: locanta
+       type: locanta-dep
 spec:
   replicas: {{ .Values.deployment.replicaCount }}
   selector:
@@ -13,15 +13,15 @@ spec:
       {{- toYaml .Values.deployment.pod.labels | nindent 8 }}
   template:
     metadata:
-        labels:
+      labels:
         {{- toYaml .Values.deployment.pod.labels | nindent 8 }}
     spec:
       containers:
-        - image: {{ .Values.deployment.pod.image}}
-          name:  {{ .Values.deployment.pod.name}}
-          imagePullPolicy: Always
-          env:
-          {{- range .Values.deployment.pod.env }}
-          - name: {{  .name }}
-            value: {{ .value }}
-          {{- end }}
+      - image: {{ .Values.deployment.pod.image}}
+        name:  {{ .Values.deployment.pod.name}}
+        imagePullPolicy: Always
+        env:
+        {{- range .Values.deployment.pod.env }}
+        - name: {{  .name }}
+          value: {{ .value }}
+        {{- end }}

@@ -3,7 +3,7 @@ namespace: default
 
 deployment:
   replicaCount: 1
-  name: locanta-fe-dep
+  name: test
   pod:
     labels:
       app: locanta
