@@ -8,10 +8,7 @@ metadata:
     type: locanta-svc
 spec:
   type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+  ports: 
+    {{- toYaml .Values.service.ports | nindent 2 }}
   selector:
     {{- toYaml .Values.deployment.pod.labels | nindent 4 }}

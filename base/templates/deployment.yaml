@@ -21,7 +21,4 @@ spec:
         name:  {{ .Values.deployment.pod.name}}
         imagePullPolicy: Always
         env:
-        {{- range .Values.deployment.pod.env }}
-        - name: {{  .name }}
-          value: {{ .value }}
-        {{- end }}
+        {{- toYaml .Values.deployment.pod.env | nindent 10 }}

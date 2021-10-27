@@ -1,0 +1,4 @@
+postgresql:
+  postgresqlUsername: postgres
+  postgresqlDatabase: postgres
+  #postgresqlPassword: mahmut123
