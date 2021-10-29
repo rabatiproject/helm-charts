@@ -3,7 +3,7 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-29T15:02:46.770026+03:00"
+    created: "2021-10-29T18:44:22.633463+03:00"
     description: A Helm chart for Kubernetes
     digest: 1436e1491e80def2e6bf49b12190bed035ca1d66b4c6de67eff5ad667349236d
     name: base
@@ -14,7 +14,7 @@ entries:
   infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-29T15:02:46.774205+03:00"
+    created: "2021-10-29T18:44:22.638507+03:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -29,7 +29,7 @@ entries:
   menuserver:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-29T15:02:46.782606+03:00"
+    created: "2021-10-29T18:44:22.647421+03:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -41,4 +41,4 @@ entries:
     urls:
     - https://rabatiproject.github.io/helm-charts/menuserver-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-29T15:02:46.769556+03:00"
+generated: "2021-10-29T18:44:22.632975+03:00"
