@@ -9,7 +9,7 @@ entries:
     name: base
     type: application
     urls:
-    - https://github.com/rabatiproject/helm-charts/base-0.1.0.tgz
+    - https://rabatiproject.github.io/helm-charts/base-0.1.0.tgz
     version: 0.1.0
   infra:
   - apiVersion: v2
@@ -24,7 +24,7 @@ entries:
     name: infra
     type: application
     urls:
-    - https://github.com/rabatiproject/helm-charts/infra-0.1.0.tgz
+    - https://rabatiproject.github.io/helm-charts/infra-0.1.0.tgz
     version: 0.1.0
   menuserver:
   - apiVersion: v2
@@ -39,6 +39,6 @@ entries:
     name: menuserver
     type: application
     urls:
-    - https://github.com/rabatiproject/helm-charts/menuserver-0.1.0.tgz
+    - https://rabatiproject.github.io/helm-charts/menuserver-0.1.0.tgz
     version: 0.1.0
 generated: "2021-10-29T15:02:46.769556+03:00"
