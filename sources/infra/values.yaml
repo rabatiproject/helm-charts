@@ -1,4 +1,25 @@
-postgresql:
-  postgresqlUsername: postgres
-  postgresqlDatabase: postgres
-  postgresqlPassword: 5a/V3F@P=/_TyRVd
+menu-server-db:
+  postgresql:
+    postgresqlUsername: postgres
+    postgresqlDatabase: postgres
+    postgresqlPassword: 5a/V3F@P=/_TyRVd
+
+
+external-keycloak-postgresql:
+  postgresql:
+    postgresqlUsername: bn_keycloak
+    postgresqlDatabase: bitnami_keycloak
+    postgresqlPassword: W7k2%D>W2e%L!mgh
+
+keycloak:
+  postgresql:
+  # If `true`, the Postgresql dependency is enabled
+    enabled: false
+  externalDatabase: 
+    host: "{{ .Release.Name }}-external-keycloak-postgresql"
+    port: 5432
+    user: bn_keycloak
+    password: W7k2%D>W2e%L!mgh
+    database: bitnami_keycloak
+  auth:
+    adminPassword: "dfdhs"
