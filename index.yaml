@@ -3,18 +3,18 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-29T18:44:22.633463+03:00"
+    created: "2021-11-01T21:02:17.625882+03:00"
     description: A Helm chart for Kubernetes
     digest: 1436e1491e80def2e6bf49b12190bed035ca1d66b4c6de67eff5ad667349236d
     name: base
     type: application
     urls:
-    - https://rabatiproject.github.io/helm-charts/base-0.1.0.tgz
+    - https://raw.githubusercontent.com/rabatiproject/helm-charts/base-0.1.0.tgz
     version: 0.1.0
   infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-29T18:44:22.638507+03:00"
+    created: "2021-11-01T21:02:17.631777+03:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -24,21 +24,6 @@ entries:
     name: infra
     type: application
     urls:
-    - https://rabatiproject.github.io/helm-charts/infra-0.1.0.tgz
+    - https://raw.githubusercontent.com/rabatiproject/helm-charts/infra-0.1.0.tgz
     version: 0.1.0
-  menuserver:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-10-29T18:44:22.647421+03:00"
-    dependencies:
-    - name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 10.12.2
-    description: A Helm chart for Kubernetes
-    digest: 8070d4428d7544b51dc661ebd6d44e291e9a5633040f7426e5f4924b0079a7f4
-    name: menuserver
-    type: application
-    urls:
-    - https://rabatiproject.github.io/helm-charts/menuserver-0.1.0.tgz
-    version: 0.1.0
-generated: "2021-10-29T18:44:22.632975+03:00"
+generated: "2021-11-01T21:02:17.624916+03:00"
