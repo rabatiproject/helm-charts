@@ -16,10 +16,11 @@ keycloak:
   # If `true`, the Postgresql dependency is enabled
     enabled: false
   externalDatabase: 
-    host: "{{ .Release.Name }}-external-keycloak-postgresql"
+    #host: "{{ .Release.Name }}-external-keycloak-postgresql"
+    host: "infra-external-keycloak-postgresql.default.svc.cluster.local"
     port: 5432
     user: bn_keycloak
     password: W7k2%D>W2e%L!mgh
     database: bitnami_keycloak
   auth:
-    adminPassword: "dfdhs"
+    adminPassword: "f;<PWTfghn{HB5AW"
