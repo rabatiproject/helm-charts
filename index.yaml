@@ -9,7 +9,7 @@ entries:
     name: base
     type: application
     urls:
-    - https://raw.githubusercontent.com/rabatiproject/helm-charts/base-0.1.0.tgz
+    - https://raw.githubusercontent.com/rabatiproject/helm-charts/main/base-0.1.0.tgz
     version: 0.1.0
   infra:
   - apiVersion: v2
@@ -24,6 +24,6 @@ entries:
     name: infra
     type: application
     urls:
-    - https://raw.githubusercontent.com/rabatiproject/helm-charts/infra-0.1.0.tgz
+    - https://raw.githubusercontent.com/rabatiproject/helm-charts/main/infra-0.1.0.tgz
     version: 0.1.0
 generated: "2021-11-01T21:02:17.624916+03:00"
