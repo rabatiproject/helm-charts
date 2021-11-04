@@ -3,9 +3,9 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-04T23:01:21.919623+03:00"
+    created: "2021-11-04T23:08:49.623024+03:00"
     description: A Helm chart for Kubernetes
-    digest: 8806557f2ac6e5305cca319a912f2096222fbfd10abef3653de6b9f138731251
+    digest: 28b2653062884bca1fa2ec25859ffed6af583cce34fe4f7ac4bd3e6ac36c654a
     name: base
     type: application
     urls:
@@ -14,7 +14,7 @@ entries:
   infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-04T23:01:21.931698+03:00"
+    created: "2021-11-04T23:08:49.635385+03:00"
     dependencies:
     - alias: menu-server-db
       name: postgresql
@@ -29,10 +29,10 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 5.1.5
     description: A Helm chart for Kubernetes
-    digest: 8b1e92d29950149113fa646fd02d5e157ebbd1b83d155a03e8ba609eaf0d8023
+    digest: 67ee4e8ba174491eb9e2c9815b636ed221f43fdaa7d581b0535a6c36fb6d6773
     name: infra
     type: application
     urls:
     - https://raw.githubusercontent.com/rabatiproject/helm-charts/main/infra-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-04T23:01:21.919064+03:00"
+generated: "2021-11-04T23:08:49.622398+03:00"
