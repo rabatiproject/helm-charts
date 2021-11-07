@@ -29,10 +29,10 @@ dependencies:
   repository: "https://charts.bitnami.com/bitnami"
   alias: menu-server-db
 
-- name: postgresql
-  version: "10.12.2"
-  repository: "https://charts.bitnami.com/bitnami"
-  alias: external-keycloak-postgresql
+# - name: postgresql
+#   version: "10.12.2"
+#   repository: "https://charts.bitnami.com/bitnami"
+#   alias: external-keycloak-postgresql
 
 - name: keycloak
   version: "5.1.5"

@@ -5,22 +5,22 @@ menu-server-db:
     postgresqlPassword: 5a/V3F@P=/_TyRVd
 
 
-external-keycloak-postgresql:
-  postgresql:
-    postgresqlUsername: bn_keycloak
-    postgresqlDatabase: bitnami_keycloak
-    postgresqlPassword: W7k2%D>W2e%L!mgh
+#external-keycloak-postgresql:
+#  postgresql:
+#    postgresqlUsername: bn_keycloak
+#    postgresqlDatabase: bitnami_keycloak
+#    postgresqlPassword: W7k2%D>W2e%L!mgh
 
 keycloak:
   postgresql:
   # If `true`, the Postgresql dependency is enabled
-    enabled: false
-  externalDatabase: 
-    #host: "{{ .Release.Name }}-external-keycloak-postgresql"
-    host: "infra-external-keycloak-postgresql.default.svc.cluster.local"
-    port: 5432
-    user: bn_keycloak
-    password: W7k2%D>W2e%L!mgh
-    database: bitnami_keycloak
+    enabled: true
+  # externalDatabase:
+  #   #host: "{{ .Release.Name }}-external-keycloak-postgresql"
+  #   host: infra-external-keycloak-postgresql.default.svc.cluster.local
+  #   port: 5432
+  #   user: bn_keycloak
+  #   password: W7k2%D>W2e%L!mgh
+  #   database: bitnami_keycloak
   auth:
-    adminPassword: "f;<PWTfghn{HB5AW"
+    adminPassword: "kibana123..!!"
